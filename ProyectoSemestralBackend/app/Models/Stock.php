@@ -14,17 +14,15 @@ class Stock extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        "scd_id_medicamento",
         "scd_cantidad",
-        "scd_centro_distribucion",
         "scd_lote"
     ];
 
     public function medicamento(){
-        return $this->hasMany(Medicamento::class);
+        return $this->belongsTo(Medicamento::class,"scd_id_medicamento");
     }
 
     public function centroDistribucion(){
-        return $this->hasMany(centroDistribucion::class);
+        return $this->belongsTo(centroDistribucion::class,"scd_centro_distribucion");
     }
 }

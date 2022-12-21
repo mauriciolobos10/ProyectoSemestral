@@ -18,4 +18,8 @@ class Farmacia extends Model
         "farm_direccion",
         "farm_mail"
     ];
+    
+    public function egreso(){
+        return $this->hasMany(Egreso::class);
+    }
 }

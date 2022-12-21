@@ -15,15 +15,18 @@ class Egreso extends Model
 
     protected $fillable = [
         "egre_fecha",
-        "egre_centro_dist",
-        "egre_farmacia_id",
     ];
 
     public function farmacia(){
-        return $this->hasMany(Farmacia::class);
+        return $this->belongsTo(farmacia::class, "egre_farmacia_id");
     }
 
-    public function centroDistribucion(){
-        return $this->hasMany(centroDistribucion::class);
+    public function detalleEgreso(){
+        return $this->hasMany(detalleEgreso::class);
+    }
+
+    public function centroDistribucion()
+    {
+        return $this->belongsTo(centroDistribucion::class, "egre_centro_dist");
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FarmaciaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('/testing')->group(function () use ($router) {
+    $router->post('/crearFarmacia', [FarmaciaController::class, 'crearFarmacia']);
+    $router->get('/verFarmacia', [FarmaciaController::class, 'verFarmacia']);
+    $router->post('/actualizarFarmacia', [FarmaciaController::class, 'actualizarFarmacia']);
+    $router->post('/eliminarFarmacia', [FarmaciaController::class, 'eliminarFarmacia']);
 });
