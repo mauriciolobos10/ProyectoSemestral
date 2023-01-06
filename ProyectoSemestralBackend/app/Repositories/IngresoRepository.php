@@ -10,7 +10,7 @@ use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
-class TestRepository
+class IngresoRepository
 {
 
     public function guardarIngreso( $request)
