@@ -15,8 +15,8 @@ class DetalleIngresos extends Model
 
     protected $fillable = [
         "id_medicamento",
-        "det_ingreso_cantidad",
-        "det_ingreso_lote",
+        "det_ing_cantidad",
+        "det_ing_lote",
     ];
 
     public function medicamento(){
@@ -24,6 +24,6 @@ class DetalleIngresos extends Model
     }
 
     public function ingreso(){
-        return $this->belongsTo(ingreso::class, "det_ingreso_id");
+        return $this->belongsTo(Ingreso::class, "det_ingreso_id");
     }
 }

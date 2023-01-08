@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 
-class IngresoRequest extends FormRequest
+class EgresoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +27,9 @@ class IngresoRequest extends FormRequest
     public function rules()
     {
         return [
-            "ingr_centro_dist" => "required|integer",
-            "ingr_fecha" => "required|string",
+            "egre_centro_dist" => "required|integer",
+            "egre_farmacia_id" => "required|integer",
+            "egre_fecha" => "required|string",
             
         ];
     }

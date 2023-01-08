@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('id_medicamento')->references('id')->on('medicamentos');
             $table->unsignedBigInteger('det_ingreso_id');
             $table->foreign('det_ingreso_id')->references('id')->on('ingresos');
-            $table->integer("det_egr_cantidad");
-            $table->integer("det_egr_lote");
+            $table->integer("det_ing_cantidad");
+            $table->integer("det_ing_lote");
             $table->timestamps();
         });
     }

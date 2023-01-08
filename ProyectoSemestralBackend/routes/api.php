@@ -4,6 +4,10 @@ use App\Http\Controllers\FarmaciaController;
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\CentroDistribucionController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\EgresoController;
+use App\Http\Controllers\DetalleEgresoController;
+use App\Http\Controllers\IngresoController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -48,5 +52,26 @@ Route::prefix('/stock')->group(function () use ($router) {
     $router->get('/verStock', [StockController::class, 'verStock']);
     $router->post('/actualizarStock', [StockController::class, 'actualizarStock']);
     $router->post('/eliminarStock', [StockController::class, 'eliminarStock']);
+});
+
+Route::prefix('/egreso')->group(function () use ($router) {
+    $router->post('/crearEgreso', [EgresoController::class, 'crearEgreso']);
+    $router->get('/verEgreso', [EgresoController::class, 'verEgreso']);
+    $router->post('/actualizarEgreso', [EgresoController::class, 'actualizarEgreso']);
+    $router->post('/eliminarEgreso', [EgresoController::class, 'eliminarEgreso']);
+});
+
+Route::prefix('/detalleEgreso')->group(function () use ($router) {
+    $router->post('/crearDetEgreso', [EgresoController::class, 'crearDetEgreso']);
+    $router->get('/verDetEgreso', [EgresoController::class, 'verDetEgreso']);
+    $router->post('/actualizarDetEgreso', [EgresoController::class, 'actualizarDetEgreso']);
+    $router->post('/eliminarDetEgreso', [EgresoController::class, 'eliminarDetEgreso']);
+});
+
+Route::prefix('/ingreso')->group(function () use ($router) {
+    $router->post('/crearIngreso', [IngresoController::class, 'crearIngreso']);
+    // $router->get('/verIngreso', [IngresoController::class, 'verIngreso']);
+    // $router->post('/actualizarIngreso', [IngresoController::class, 'actualizarIngreso']);
+    // $router->post('/eliminarIngreso', [IngresoController::class, 'eliminarIngreso']);
 });
 

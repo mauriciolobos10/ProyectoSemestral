@@ -20,7 +20,7 @@ class DetalleEgresos extends Model
     ];
 
     public function egreso(){
-        return $this->belongsTo(egreso::class, "det_egreso_id");
+        return $this->belongsTo(Egreso::class, "det_egreso_id");
     
     }
     public function medicamento(){
