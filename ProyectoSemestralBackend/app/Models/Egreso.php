@@ -18,15 +18,15 @@ class Egreso extends Model
     ];
 
     public function farmacia(){
-        return $this->belongsTo(farmacia::class, "egre_farmacia_id");
+        return $this->belongsTo(Farmacia::class, "egre_farmacia_id");
     }
 
     public function detalleEgreso(){
-        return $this->hasMany(detalleEgreso::class);
+        return $this->hasMany(DetalleEgreso::class);
     }
 
     public function centroDistribucion()
     {
-        return $this->belongsTo(centroDistribucion::class, "egre_centro_dist");
+        return $this->belongsTo(CentroDistribucion::class, "egre_centro_dist");
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetalleTraspasos extends Model
 {
-    protected $table = 'detalle_egresos';
+    protected $table = 'detalle_traspasos';
     protected $primaryKey = 'id';
     public $timestamps = true;
 

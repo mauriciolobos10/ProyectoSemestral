@@ -24,7 +24,7 @@ class DetalleEgresos extends Model
     
     }
     public function medicamento(){
-        return $this->hasMany(Medicamento::class);
+        return $this->belongsTo(Medicamento::class, "id_medicamento");
     }
 
 }

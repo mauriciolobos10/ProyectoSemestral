@@ -7,6 +7,8 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\EgresoController;
 use App\Http\Controllers\DetalleEgresoController;
 use App\Http\Controllers\IngresoController;
+use App\Http\Controllers\TraspasoController;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -56,9 +58,9 @@ Route::prefix('/stock')->group(function () use ($router) {
 
 Route::prefix('/egreso')->group(function () use ($router) {
     $router->post('/crearEgreso', [EgresoController::class, 'crearEgreso']);
-    $router->get('/verEgreso', [EgresoController::class, 'verEgreso']);
-    $router->post('/actualizarEgreso', [EgresoController::class, 'actualizarEgreso']);
-    $router->post('/eliminarEgreso', [EgresoController::class, 'eliminarEgreso']);
+    // $router->get('/verEgreso', [EgresoController::class, 'verEgreso']);
+    // $router->post('/actualizarEgreso', [EgresoController::class, 'actualizarEgreso']);
+    // $router->post('/eliminarEgreso', [EgresoController::class, 'eliminarEgreso']);
 });
 
 Route::prefix('/detalleEgreso')->group(function () use ($router) {
@@ -70,6 +72,12 @@ Route::prefix('/detalleEgreso')->group(function () use ($router) {
 
 Route::prefix('/ingreso')->group(function () use ($router) {
     $router->post('/crearIngreso', [IngresoController::class, 'crearIngreso']);
+    // $router->get('/verIngreso', [IngresoController::class, 'verIngreso']);
+    // $router->post('/actualizarIngreso', [IngresoController::class, 'actualizarIngreso']);
+    // $router->post('/eliminarIngreso', [IngresoController::class, 'eliminarIngreso']);
+});
+Route::prefix('/traspaso')->group(function () use ($router) {
+    $router->post('/crearTraspaso', [TraspasoController::class, 'crearTraspaso']);
     // $router->get('/verIngreso', [IngresoController::class, 'verIngreso']);
     // $router->post('/actualizarIngreso', [IngresoController::class, 'actualizarIngreso']);
     // $router->post('/eliminarIngreso', [IngresoController::class, 'eliminarIngreso']);

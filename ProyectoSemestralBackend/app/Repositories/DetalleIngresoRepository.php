@@ -22,6 +22,7 @@ class DetalleIngresoRepository
             // if($farmacia){
             //     throw new Exception("No existe la farmacia");
             // }
+            //return response()->json(["alo " ], Response::HTTP_OK);
             $detIngreso = new DetalleIngresos();
             $detIngreso->id_medicamento = $request->id_medicamento;
             $detIngreso->det_ingreso_id = $request->det_ingreso_id;//esta mal en el modelo del profe parece

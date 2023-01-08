@@ -14,17 +14,17 @@ class MedicamentoController extends Controller
         $this->medicamentoRepo = $medicamentoRepo;
     }
 
-    public function crearFarmacia(MedicamentoRequest $request)
+    public function crearMedicamento(MedicamentoRequest $request)
     {
         return $this->medicamentoRepo->crearMedicamento($request);
     }
-    public function actualizarFarmacia(MedicamentoRequest $request){
+    public function actualizarMedicamento(MedicamentoRequest $request){
         return $this->medicamentoRepo->actualizarMedicamento($request);
     }
-    public function eliminarFarmacia(Request $request){
+    public function eliminarMedicamento(Request $request){
         return $this->medicamentoRepo->eliminarMedicamento($request);
     }
-    public function verFarmacia(Request $request){
+    public function verMedicamento(Request $request){
         return $this->medicamentoRepo->verMedicamento($request);
     }
 }
