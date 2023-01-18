@@ -27,4 +27,7 @@ class MedicamentoController extends Controller
     public function verMedicamento(Request $request){
         return $this->medicamentoRepo->verMedicamento($request);
     }
+    public function verMedicamentos(){
+        return $this->medicamentoRepo->verMedicamentos();
+    }
 }

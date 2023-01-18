@@ -27,4 +27,7 @@ class CentroDistribucionController extends Controller
     public function verCentro(Request $request){
         return $this->centroRepo->verCentro($request);
     }
+    public function verCentros(){
+        return $this->centroRepo->verCentros();
+    }
 }

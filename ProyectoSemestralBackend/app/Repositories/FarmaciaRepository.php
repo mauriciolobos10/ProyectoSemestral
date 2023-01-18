@@ -92,4 +92,16 @@ class FarmaciaRepository
         }
     }
 
+    public function verFarmacias(){
+        try {
+            $farmacias = Farmacia::all();
+            if(!$farmacias){
+                throw new Exception("No se encontraron farmacias");
+            }
+
+        return response()->json(["farmacias" => $farmacias], Response::HTTP_OK);
+        }catch (Exception $e) {
+            return response()->json(["error" => $e->getMessage()], Response::HTTP_BAD_REQUEST);
+        }
+    }
 }
