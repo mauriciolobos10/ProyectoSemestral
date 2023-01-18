@@ -91,4 +91,17 @@ class MedicamentoRepository
         }
     }
 
+    public function verMedicamentos(){
+        try {
+            $medicamentos = Medicamento::all();
+            if(!$medicamentos){
+                throw new Exception("No se encontraron medicamentos");
+            }
+
+        return response()->json(["medicamentos" => $medicamentos], Response::HTTP_OK);
+        }catch (Exception $e) {
+            return response()->json(["error" => $e->getMessage()], Response::HTTP_BAD_REQUEST);
+        }
+    }
+
 }

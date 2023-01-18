@@ -27,7 +27,7 @@ class CentroDistribucionRequest extends FormRequest
     public function rules()
     {
         return [
-            "cd_codigo" => "required|integer",
+            "cd_codigo" => "required|string",
             "cd_direccion" => "required|string",
             "cd_telefono" => "required|string",
         ];

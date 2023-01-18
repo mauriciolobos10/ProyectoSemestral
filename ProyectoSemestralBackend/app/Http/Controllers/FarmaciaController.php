@@ -27,4 +27,7 @@ class FarmaciaController extends Controller
     public function verFarmacia(Request $request){
         return $this->farmaciaRepo->verFarmacia($request);
     }
+    public function verFarmacias(){
+        return $this->farmaciaRepo->verFarmacias();
+    }
 }

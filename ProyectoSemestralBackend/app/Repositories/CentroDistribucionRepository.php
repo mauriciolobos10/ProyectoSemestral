@@ -92,4 +92,17 @@ class CentroDistribucionRepository
         }
     }
 
+    public function verCentros(){
+        try {
+            $centros = CentroDistribucion::all();
+            if(!$centros){
+                throw new Exception("No se encontraron centros");
+            }
+
+        return response()->json(["centros" => $centros], Response::HTTP_OK);
+        }catch (Exception $e) {
+            return response()->json(["error" => $e->getMessage()], Response::HTTP_BAD_REQUEST);
+        }
+    }
+
 }

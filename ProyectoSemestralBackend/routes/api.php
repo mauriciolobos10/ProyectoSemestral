@@ -31,6 +31,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('/farmacia')->group(function () use ($router) {
     $router->post('/crearFarmacia', [FarmaciaController::class, 'crearFarmacia']);
     $router->get('/verFarmacia', [FarmaciaController::class, 'verFarmacia']);
+    $router->get('/verFarmacias', [FarmaciaController::class, 'verFarmacias']);
     $router->post('/actualizarFarmacia', [FarmaciaController::class, 'actualizarFarmacia']);
     $router->post('/eliminarFarmacia', [FarmaciaController::class, 'eliminarFarmacia']);
 });
@@ -38,6 +39,7 @@ Route::prefix('/farmacia')->group(function () use ($router) {
 Route::prefix('/medicamento')->group(function () use ($router) {
     $router->post('/crearMedicamento', [MedicamentoController::class, 'crearMedicamento']);
     $router->get('/verMedicamento', [MedicamentoController::class, 'verMedicamento']);
+    $router->get('/verMedicamentos', [MedicamentoController::class, 'verMedicamentos']);
     $router->post('/actualizarMedicamento', [MedicamentoController::class, 'actualizarMedicamento']);
     $router->post('/eliminarMedicamento', [MedicamentoController::class, 'eliminarMedicamento']);
 });
@@ -47,6 +49,7 @@ Route::prefix('/centro')->group(function () use ($router) {
     $router->get('/verCentro', [CentroDistribucionController::class, 'verCentro']);
     $router->post('/actualizarCentro', [CentroDistribucionController::class, 'actualizarCentro']);
     $router->post('/eliminarCentro', [CentroDistribucionController::class, 'eliminarCentro']);
+    $router->get('/verCentros', [CentroDistribucionController::class, 'verCentros']);
 });
 
 Route::prefix('/stock')->group(function () use ($router) {
